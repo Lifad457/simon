@@ -1,3 +1,4 @@
+import Simon from "./components/Simon"
 import { AppContainer } from "./styles/app.css"
 import { GlobalStyles } from "./styles/global.css"
 
@@ -7,8 +8,7 @@ function App() {
     <>
       <GlobalStyles />
       <AppContainer>
-
-        
+        <Simon />        
       </AppContainer>
 
     </>
