@@ -39,6 +39,5 @@ export const GlobalStyles = createGlobalStyle`
     body {
         background-image: url(${BG});
         background-size: cover;
-        background-repeat: no-repeat;
     }
 `

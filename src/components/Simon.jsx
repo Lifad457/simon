@@ -1,12 +1,30 @@
-import { BlueBuzzer, GreenBuzzer, RedBuzzer, SimonContainer, YellowBuzzer } from "../styles/simon.css";
+import { useState } from "react";
+import { BlueBuzzer, GreenBuzzer, RedBuzzer, SimonContainer, StartButton, YellowBuzzer } from "../styles/simon.css";
 
 export default function Simon() {
+    const[sequence, setSequence] = useState([])
+    
+    function arrayRandom(liste) {
+        return liste[Math.floor(Math.random() * liste.length)];
+      }
+    function addToSequence() {
+        const liste = ["green", "red", "yellow", "blue"];
+        const random = arrayRandom(liste);
+        console.log(random)
+    }
+    function startGame() {
+        addToSequence()
+    }
+
     return (
-        <SimonContainer>
-            <GreenBuzzer />
-            <RedBuzzer />
-            <YellowBuzzer />
-            <BlueBuzzer />
-        </SimonContainer>
+        <>
+            <SimonContainer>
+                <StartButton onClick={startGame}>START</StartButton>
+                <GreenBuzzer />
+                <RedBuzzer />
+                <YellowBuzzer />
+                <BlueBuzzer />
+            </SimonContainer>
+        </>
     )
 }

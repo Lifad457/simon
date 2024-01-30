@@ -20,7 +20,7 @@ export const SimonContainer = styled.div`
     &:after {
         content: "";
         position: absolute;
-        top: calc(50% - 20%)    ;
+        top: calc(50% - 20%);
         left: calc(50% - 20%);
         height: 40%;
         width: 40%;
@@ -28,13 +28,13 @@ export const SimonContainer = styled.div`
         background-color: #0f0f0f;
         box-shadow: inset 0 0 1.5rem #646464,
                     inset 0 0 3rem #3b3b3b;
-        z-index: 99;
+        z-index: 5;
     }
 
     &:before {
         content: "";
         position: absolute;
-        top: calc(50% - 22.5%)    ;
+        top: calc(50% - 22.5%);
         left: calc(50% - 22.5%);
         height: 45%;
         width: 45%;
@@ -44,13 +44,11 @@ export const SimonContainer = styled.div`
     }
 `
 export const Buzzer = styled.div`
-    display: flex;
-    flex-direction: column;
     position: relative;
-    height: 46%;
-    width: 46%;
+    margin: 2.5%;
+    height: 45%;
+    width: 45%;
     border-top-left-radius: 100%;
-    margin: 1.25rem;
 `
 export const GreenBuzzer = styled(Buzzer)`
     position: absolute;
@@ -74,4 +72,19 @@ export const BlueBuzzer = styled(Buzzer)`
     left: 50%;
     background-color: var(--blue-color);
     transform: rotate(180deg);
+`
+export const StartButton = styled.div`
+    display: inline-block;
+    margin: 0 auto;
+    padding: .5em .6em;
+    color: antiquewhite;
+    border-radius: 1rem;
+    font-family: 'Black Ops One', system-ui;
+    font-size: calc(100dvh / 17);
+    cursor: pointer;
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 `
