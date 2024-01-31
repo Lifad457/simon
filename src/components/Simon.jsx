@@ -20,10 +20,10 @@ export default function Simon() {
         <>
             <SimonContainer>
                 <StartButton onClick={startGame}>START</StartButton>
-                <GreenBuzzer />
-                <RedBuzzer />
-                <YellowBuzzer />
-                <BlueBuzzer />
+                <GreenBuzzer className="" />
+                <RedBuzzer className="" />
+                <YellowBuzzer className="" />
+                <BlueBuzzer className="" />
             </SimonContainer>
         </>
     )
