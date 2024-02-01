@@ -41,13 +41,13 @@ export const SimonContainer = styled.div`
         border-radius: 50%;
         background-color: #141414;
         z-index:1;
-    }     
+    }
+
     .active {
         box-shadow: 
-            inset 0 0 1rem var(--_outer-glow),
             inset 0 0 2rem var(--_outer-glow),
-            inset 0 0 5rem var(--_inner-glow),
-            inset 0 0 10rem var(--_inner-glow),
+            inset 0 0 4rem var(--_outer-glow),
+            inset 0 0 5rem var(--_outer-glow),
             inset 0 0 15rem var(--_inner-glow);
     }
 `
@@ -59,7 +59,7 @@ export const Buzzer = styled.div`
     border-top-left-radius: 100%;
     --_inner-glow: var(--inner, black);
     --_outer-glow: var(--outer, white);
-    --outer: var(--tertiary-color);
+    --outer: var(--secondary-color);
 `
 export const GreenBuzzer = styled(Buzzer)`
     background-color: var(--green-color);

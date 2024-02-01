@@ -12,14 +12,14 @@ export const GlobalStyles = createGlobalStyle`
         --primary-color: #000;
         --secondary-color: #fff;
         --tertiary-color: #3d3c3c;
-        --yellow-color: rgb(255, 255, 0);
-        --blue-color: rgb(0, 0, 255);
-        --red-color: rgb(255, 0, 0);
-        --green-color: rgb(0, 255, 0);
-        --yellow-glow-color: rgb(255, 255, 50);
-        --blue-glow-color: rgb(50, 50, 255);
-        --red-glow-color: rgb(255, 50, 100);
-        --green-glow-color: rgb(50, 255, 50);
+        --yellow-color: rgb(255, 255, 0, 0.6);
+        --blue-color: rgb(0, 0, 255, 0.7);
+        --red-color: rgb(255, 0, 0, 0.7);
+        --green-color: rgb(0, 255, 0, 0.6);
+        --yellow-glow-color: rgb(255, 255, 0);
+        --blue-glow-color: rgb(0, 0, 255);
+        --red-glow-color: rgb(255, 0, 0);
+        --green-glow-color: rgb(0, 250, 0);
     }
 
     body {
