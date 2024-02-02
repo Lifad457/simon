@@ -12,10 +12,10 @@ export const GlobalStyles = createGlobalStyle`
         --primary-color: #000;
         --secondary-color: #fff;
         --tertiary-color: #3d3c3c;
-        --yellow-color: rgb(255, 255, 0, 0.6);
-        --blue-color: rgb(0, 0, 255, 0.7);
-        --red-color: rgb(255, 0, 0, 0.7);
-        --green-color: rgb(0, 255, 0, 0.6);
+        --yellow-color: rgb(255, 255, 0, 0.8);
+        --blue-color: rgb(0, 0, 255, 0.8);
+        --red-color: rgb(255, 0, 0, 0.8);
+        --green-color: rgb(0, 255, 0, 0.8);
         --yellow-glow-color: rgb(255, 255, 0);
         --blue-glow-color: rgb(0, 0, 255);
         --red-glow-color: rgb(255, 0, 0);

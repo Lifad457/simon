@@ -45,8 +45,8 @@ export const SimonContainer = styled.div`
 
     .active {
         box-shadow: 
-            inset 0 0 2rem var(--_outer-glow),
-            inset 0 0 4rem var(--_outer-glow),
+            0 0 2rem var(--_inner-glow),
+            0 0 4rem var(--_inner-glow),
             inset 0 0 5rem var(--_outer-glow),
             inset 0 0 15rem var(--_inner-glow);
     }
@@ -60,6 +60,7 @@ export const Buzzer = styled.div`
     --_inner-glow: var(--inner, black);
     --_outer-glow: var(--outer, white);
     --outer: var(--secondary-color);
+    cursor: pointer;
 `
 export const GreenBuzzer = styled(Buzzer)`
     background-color: var(--green-color);
@@ -84,18 +85,19 @@ export const BlueBuzzer = styled(Buzzer)`
     transform: rotate(180deg);
     --inner: var(--blue-glow-color);
 `
-export const StartButton = styled.div`
-    display: inline-block;
-    margin: 0 auto;
+export const BuzzerButton = styled.div`
+    display: flex;
     padding: .5em .6em;
     color: antiquewhite;
-    border-radius: 1rem;
+    text-align: center;
     font-family: 'Black Ops One', system-ui;
-    font-size: calc(100dvh / 17);
-    cursor: pointer;
-    position: absolute;
-    top: 41%;
+    font-size: calc(100dvh / 22);
+    /* position: absolute;
+    top: 38%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
+    cursor: pointer;
     z-index: 10;
 `
+
+/**element central a faire a la place du pseudo after pour gerer le jeu**/
