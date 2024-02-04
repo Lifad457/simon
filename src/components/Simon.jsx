@@ -6,6 +6,7 @@ export default function Simon() {
     const[mySequence, setMySequence] = useState([])
     const[current, setCurrent] = useState("")
     const[button, setButton] = useState("START")
+    const[round, setRound] = useState(1)
     const record = JSON.parse(localStorage.getItem('record')) || 0;
     
     function addToSequence() {
@@ -38,7 +39,6 @@ export default function Simon() {
             else {
                 clearInterval(interval)
                 setCurrent("")
-                setButton("ROUND " + (i - 1))
             }
         }, 800)
     }
@@ -53,6 +53,8 @@ export default function Simon() {
 
     useEffect(() => {
         if(sequence.length > 0) {
+            setButton("ROUND " + round)
+            setRound(prevRound => prevRound + 1)
             playSequence()
         }
     }, [sequence])
