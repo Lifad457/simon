@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { BlueBuzzer, GreenBuzzer, RedBuzzer, SimonContainer, BuzzerButton, YellowBuzzer } from "../styles/simon.css";
+import { BlueBuzzer, GreenBuzzer, RedBuzzer, SimonContainer, BuzzerButton, YellowBuzzer, HighScore } from "../styles/simon.css";
 
 export default function Simon() {
     const[sequence, setSequence] = useState([])
     const[mySequence, setMySequence] = useState([])
     const[current, setCurrent] = useState("")
     const[button, setButton] = useState("START")
+    const record = JSON.parse(localStorage.getItem('record')) || 0;
     
     function addToSequence() {
         const liste = ["green", "red", "yellow", "blue"];
@@ -37,7 +38,7 @@ export default function Simon() {
             else {
                 clearInterval(interval)
                 setCurrent("")
-                setButton("Tour " + (i - 1))
+                setButton("ROUND " + (i - 1))
             }
         }, 800)
     }
@@ -59,19 +60,29 @@ export default function Simon() {
     useEffect(() => {
         if(mySequence.length > 0) {
             if(mySequence[mySequence.length - 1] !== sequence[mySequence.length - 1]) {
+                if(sequence.length > record) {
+                    localStorage.setItem('record', JSON.stringify(sequence.length))
+                }
                 setSequence([])
                 setMySequence([])
-                setButton("LOSE, RESTART?")
+                setButton("LOSE, TRY AGAIN?")
+                setTimeout(() => {
+                    setButton("START")
+                }, 1000)
             }
             else if(mySequence.length === sequence.length) {
-                setMySequence([])
-                addToSequence()
+                setTimeout(() => {
+                    setMySequence([])
+                    setCurrent("")
+                    addToSequence()
+                }, 1000)
             }
         }
     }, [mySequence])
 
     return (
         <>
+                <HighScore>HIGH SCORE : {record}</HighScore>
             <SimonContainer>
                 <BuzzerButton onClick={startGame}>{button}</BuzzerButton>
                 <GreenBuzzer className={current==="green" ? "active" : ""} onClick={() => handleBuzzerClick("green")} />

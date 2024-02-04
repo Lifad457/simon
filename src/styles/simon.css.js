@@ -6,8 +6,8 @@ export const SimonContainer = styled.div`
     position: relative;
     margin: auto;
     background-color: #141414;
-    height: 70dvh;
-    width: 70dvh;
+    min-height: 70dvh;
+    min-width: 70dvh;
     border-radius: 50%;
     box-shadow: ${`
             0 0 0.45rem #646464,
@@ -16,20 +16,6 @@ export const SimonContainer = styled.div`
             0 0 3.8rem  #3b3b3b,
             0 0 4.2rem  #3b3b3b;
         `};
-
-    &:after {
-        content: "";
-        position: absolute;
-        top: calc(50% - 20%);
-        left: calc(50% - 20%);
-        height: 40%;
-        width: 40%;
-        border-radius: 50%;
-        background-color: #0f0f0f;
-        box-shadow: inset 0 0 1.5rem #646464,
-                    inset 0 0 3rem #3b3b3b;
-        z-index: 5;
-    }
 
     &:before {
         content: "";
@@ -86,18 +72,33 @@ export const BlueBuzzer = styled(Buzzer)`
     --inner: var(--blue-glow-color);
 `
 export const BuzzerButton = styled.div`
+    position: absolute;
+    top: calc(50% - 20%);
+    left: calc(50% - 20%);
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    background-color: #0f0f0f;
+    box-shadow: inset 0 0 1.5rem #646464,
+                inset 0 0 3rem #3b3b3b;
     display: flex;
-    padding: .5em .6em;
+    justify-content: center;
+    align-items: center;
     color: antiquewhite;
     text-align: center;
     font-family: 'Black Ops One', system-ui;
     font-size: calc(100dvh / 22);
-    /* position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translateX(-50%); */
     cursor: pointer;
-    z-index: 10;
+    z-index: 5;
 `
-
-/**element central a faire a la place du pseudo after pour gerer le jeu**/
+export const HighScore = styled.h1`
+    position: relative;
+    min-width: 70dvh;
+    font-family: 'Black Ops One', system-ui;
+    font-size: calc(100dvh / 20);
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+`
